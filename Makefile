@@ -4,10 +4,11 @@ CC := arm-linux-gcc
 STRIP := arm-linux-strip
 
 TARGET = gpiointtest_epoll.so
-SRCS := gpiointtest_epoll.c
-CFGFLAG := -fPIC -shared
+SRCS := gpiointtest_epoll.c gpioconfig.c
+CFGFLAG := -fPIC -shared -L ./
+
 all: 
-	$(CC) -static $(CFGFLAG) $(SRCS) -o $(TARGET)
+	$(CC) $(CFGFLAG) $(SRCS) -o $(TARGET)
 	$(STRIP) $(TARGET) 
 
 clean:

@@ -13,7 +13,7 @@ int Watching(int gpionum)
 {
 	/* initial GPIO*/ 
 	 
-	int value = 0;
+	int value = 0,i=0;
 	int nfds = 0;
 	int gpio_fd, timeout;
 	struct epoll_event evd;
@@ -48,7 +48,7 @@ int Watching(int gpionum)
 				 			printf("\npoll() failed!\n");
 				 			return -1;
 				 	    }
-        	    for (int i = 0;i<nfds;i++ )
+        	    for (i = 0;i<nfds;i++ )
         	    {
         	    	if (events->events&EPOLLPRI)
         	    	{
@@ -68,3 +68,4 @@ int Watching(int gpionum)
 		gpio_fd_close(gpio_fd);
 		return (0);
 }
+void main(){}
