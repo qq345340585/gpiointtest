@@ -68,4 +68,3 @@ int Watching(int gpionum)
 		gpio_fd_close(gpio_fd);
 		return (0);
 }
-void main(){}
